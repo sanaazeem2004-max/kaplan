@@ -10,7 +10,7 @@ export default function Attorneys() {
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="eyebrow">Our attorneys</p>
-            <h2 className="h-section mt-5 max-w-2xl">The people in your <span className="accent">corner</span></h2>
+            <h2 className="mt-5 max-w-2xl font-serif text-[2.4rem] font-semibold leading-[1.05] sm:text-6xl">The people in your corner</h2>
           </div>
           <a href={`${firm.links.about}#attorneys`} target="_blank" rel="noopener noreferrer" className="btn-ghost">
             View the full team <ArrowUpRight size={16} aria-hidden="true" />
@@ -34,7 +34,7 @@ export default function Attorneys() {
                 {founder.pull}
               </blockquote>
               <div className="mt-auto pt-7">
-                <ArrowButton href={founder.href} target="_blank" rel="noopener noreferrer">
+                <ArrowButton variant="outline" href={founder.href} target="_blank" rel="noopener noreferrer">
                   Read Austin’s Bio
                 </ArrowButton>
               </div>

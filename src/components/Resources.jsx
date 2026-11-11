@@ -3,6 +3,7 @@ import Reveal from './Reveal';
 import ArrowButton from './ArrowButton';
 import { firm, posts } from '../data/site';
 
+// Shares the deep-navy background with How It Works.
 function Meta({ post }) {
   return (
     <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-mist">
@@ -15,21 +16,23 @@ function Meta({ post }) {
 export default function Resources() {
   const [lead, ...rest] = posts;
   return (
-    <section id="resources" className="relative bg-ink-800 py-20 sm:py-28">
+    <section id="resources" className="relative bg-deep py-20 sm:py-28">
       <div className="container-site">
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="eyebrow">Legal resources</p>
-            <h2 className="h-section mt-5">Know your <span className="accent">rights</span></h2>
+            <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-gold-light">
+              <span className="h-px w-7 bg-gold" aria-hidden="true" />Legal resources
+            </p>
+            <h2 className="mt-5 max-w-xl font-serif text-[2.1rem] font-semibold leading-[1.12] sm:text-5xl">Know your rights at work</h2>
           </div>
-          <ArrowButton href={firm.links.blog} target="_blank" rel="noopener noreferrer">All Articles</ArrowButton>
+          <ArrowButton variant="outline" href={firm.links.blog} target="_blank" rel="noopener noreferrer">All Articles</ArrowButton>
         </Reveal>
 
         <div className="mt-14 grid gap-8 lg:grid-cols-[1.15fr_1fr]">
           {/* Lead story */}
           <Reveal as="article">
             <a href={lead.href} target="_blank" rel="noopener noreferrer" className="group block">
-              <div className="overflow-hidden rounded-2xl">
+              <div className="overflow-hidden rounded-2xl shadow-[0_20px_50px_-25px_rgba(0,0,0,.8)]">
                 <img src={lead.image} alt="" loading="lazy" className="aspect-[16/9] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="mt-6"><Meta post={lead} /></div>

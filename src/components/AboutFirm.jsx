@@ -5,18 +5,18 @@ import { firm, founder } from '../data/site';
 
 export default function AboutFirm() {
   return (
-    <section id="about" className="relative bg-ink py-20 sm:py-28">
-      <div className="container-site grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-        {/* Image collage */}
-        <Reveal className="relative">
-          <div className="grid grid-cols-2 gap-4">
+    <section id="about" className="relative bg-ink py-20 sm:py-24 lg:py-20">
+      <div className="container-site grid gap-14 lg:grid-cols-2 lg:items-stretch lg:gap-20">
+        {/* Image collage — two equal photos, same top, bottom and gap */}
+        <Reveal className="relative h-[460px] sm:h-[560px] lg:h-full lg:min-h-[520px]">
+          <div className="grid h-full grid-cols-2 gap-4">
             <div className="overflow-hidden rounded-2xl">
               <img src="/images/office.webp" alt="Austin Kaplan standing in the firm's office" loading="lazy"
-                className="aspect-[3/4.4] h-full w-full object-cover object-[50%_30%] transition-transform duration-700 hover:scale-105" />
+                className="h-full w-full object-cover object-[50%_20%] transition-transform duration-700 hover:scale-105" />
             </div>
-            <div className="mt-12 overflow-hidden rounded-2xl">
+            <div className="overflow-hidden rounded-2xl">
               <img src="/images/consult.webp" alt="An attorney reviewing case documents at her desk" loading="lazy"
-                className="aspect-[3/4.4] h-full w-full object-cover object-[35%_50%] transition-transform duration-700 hover:scale-105" />
+                className="h-full w-full object-cover object-[72%_50%] transition-transform duration-700 hover:scale-105" />
             </div>
           </div>
           <div className="absolute left-1/2 top-1/2 w-40 -translate-x-1/2 -translate-y-1/2 rounded-2xl border-[6px] border-ink bg-navy px-4 py-5 text-center shadow-2xl sm:w-44">
@@ -28,8 +28,8 @@ export default function AboutFirm() {
         {/* Copy */}
         <Reveal delay={120}>
           <p className="eyebrow">About the firm</p>
-          <h2 className="h-section mt-5">
-            Dedicated to protecting employee rights &amp; ensuring <span className="accent">workplace justice.</span>
+          <h2 className="h-section mt-5 lg:text-[2.6rem]">
+            Dedicated to protecting employee rights &amp; ensuring workplace justice.
           </h2>
           <p className="mt-6 leading-relaxed text-mist">
             Kaplan Law Firm represents individuals in employment and civil rights matters. If your company is
@@ -52,7 +52,7 @@ export default function AboutFirm() {
           </div>
 
           <div className="mt-9 flex flex-wrap items-center gap-6">
-            <ArrowButton href={firm.links.about} target="_blank" rel="noopener noreferrer">Our Firm</ArrowButton>
+            <ArrowButton variant="outline" href={firm.links.about} target="_blank" rel="noopener noreferrer">Our Firm</ArrowButton>
             <div className="flex items-center gap-3">
               <img src={founder.photo} alt="" className="h-12 w-12 rounded-full object-cover object-top" />
               <span className="leading-tight">

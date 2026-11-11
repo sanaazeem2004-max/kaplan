@@ -20,7 +20,7 @@ export default function Testimonials() {
           <blockquote>
             <p className="mt-4 font-serif text-3xl leading-[1.25] sm:text-[2.6rem]">
               “Everyone I dealt with at the firm was knowledgeable, helpful and operated with a{' '}
-              <span className="accent">high degree of integrity.</span>”
+              high degree of integrity.”
             </p>
             <footer className="mt-7 flex items-center gap-3 text-sm">
               <span className="h-px w-10 bg-gold" aria-hidden="true" />

@@ -10,19 +10,19 @@ const ICONS = {
 
 export default function PracticeAreas() {
   return (
-    <section id="practice-areas" className="relative bg-ink-800 py-20 sm:py-28">
-      <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-navy-line to-transparent" />
+    <section id="practice-areas" className="relative bg-deep py-20 sm:py-28">
+      <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
       <div className="container-site">
         <Reveal className="grid items-end gap-6 lg:grid-cols-[1.2fr_1fr_auto]">
           <div>
             <p className="eyebrow">Practice areas</p>
-            <h2 className="h-section mt-5">How we fight <span className="accent">for you</span></h2>
+            <h2 className="h-section mt-5">How we fight for you</h2>
           </div>
           <p className="max-w-md leading-relaxed text-mist">
             We represent employees across the full range of workplace and civil rights disputes — from the day
             something goes wrong all the way to the courtroom.
           </p>
-          <div><ArrowButton href={firm.links.practiceAreas} target="_blank" rel="noopener noreferrer">View All</ArrowButton></div>
+          <div><ArrowButton variant="outline" href={firm.links.practiceAreas} target="_blank" rel="noopener noreferrer">View All</ArrowButton></div>
         </Reveal>
 
         <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -34,7 +34,7 @@ export default function PracticeAreas() {
                   href={p.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="card group relative flex h-full flex-col p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold/60 hover:bg-navy-700"
+                  className="card group relative flex h-full flex-col bg-ink-900/60 p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold/60 hover:bg-navy-700"
                 >
                   <span className="absolute right-5 top-5 rounded-full border border-white/10 px-2.5 py-1 text-[0.7rem] font-semibold text-mist transition-colors group-hover:border-gold/50 group-hover:text-gold-light">
                     0{i + 1}

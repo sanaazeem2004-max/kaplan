@@ -1,6 +1,6 @@
-import { Phone, Scale, ArrowRight, MapPin } from 'lucide-react';
+import { Scale, ArrowRight, MapPin } from 'lucide-react';
 import ArrowButton from './ArrowButton';
-import { firm, attorneys } from '../data/site';
+import { attorneys } from '../data/site';
 
 export default function Hero() {
   return (
@@ -13,13 +13,14 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-transparent to-ink" />
       </div>
 
-      <div className="container-site grid items-center gap-14 pb-16 pt-10 lg:grid-cols-[1.05fr_.95fr] lg:gap-8 lg:pb-0 lg:pt-14">
+      {/* One shared frame: both columns stretch to the same top and bottom edge */}
+      <div className="container-site grid items-stretch gap-12 pb-16 pt-10 lg:grid-cols-[1.05fr_.95fr] lg:gap-14 lg:pb-20 lg:pt-14">
         {/* Copy */}
-        <div className="relative z-10 lg:pb-24">
+        <div className="relative z-10 flex flex-col">
           <p className="eyebrow">Employment &amp; Civil Rights Law</p>
-          <h1 className="mt-6 font-serif text-[2.6rem] font-semibold leading-[1.06] sm:text-6xl xl:text-[4.1rem]">
-            Champions of Employee Rights.{' '}
-            <span className="accent inline-block pl-[0.07em]">Advocates for Justice.</span>
+          <h1 className="mt-6 font-serif text-[2.6rem] font-semibold leading-[1.08] sm:text-6xl lg:text-[3rem] xl:text-[3.5rem]">
+            <span className="block text-balance">Champions of Employee Rights.</span>
+            <span className="accent mt-1 block pl-[0.07em] lg:whitespace-nowrap">Advocates for Justice.</span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-mist sm:text-lg">
             When your rights at work are violated, you deserve experienced attorneys who will listen,
@@ -33,18 +34,8 @@ export default function Hero() {
             </a>
           </div>
 
-          <a href={firm.phoneHref} className="group mt-8 inline-flex items-center gap-3">
-            <span className="grid h-11 w-11 place-items-center rounded-full border border-gold/50 text-gold transition-colors group-hover:bg-gold group-hover:text-ink">
-              <Phone size={17} aria-hidden="true" />
-            </span>
-            <span className="leading-tight">
-              <span className="block text-xs uppercase tracking-[0.2em] text-mist">Call now</span>
-              <span className="font-serif text-xl text-gold-light">{firm.phoneDisplay}</span>
-            </span>
-          </a>
-
           {/* Credibility tiles (verified facts only) */}
-          <div className="mt-10 grid max-w-xl gap-4 sm:grid-cols-2">
+          <div className="mt-9 grid max-w-xl gap-4 sm:grid-cols-2">
             <a href="#attorneys" className="card group flex flex-col justify-between gap-4 p-5 transition-colors hover:border-gold/60">
               <span className="text-sm font-semibold"><span className="text-gold-light">A full team</span> of employee-side attorneys</span>
               <span className="flex items-center">
@@ -70,10 +61,10 @@ export default function Hero() {
         </div>
 
         {/* Portrait composition */}
-        <div className="relative mx-auto w-full max-w-[520px] self-end">
-          <div aria-hidden="true" className="absolute bottom-0 left-1/2 h-[62%] w-[112%] -translate-x-1/2 rounded-t-full bg-gradient-to-b from-gold to-gold-dark" />
-          <div aria-hidden="true" className="absolute bottom-0 left-1/2 h-[62%] w-[112%] -translate-x-1/2 rounded-t-full bg-[repeating-radial-gradient(circle_at_50%_100%,transparent_0_22px,rgba(5,7,12,.08)_22px_23px)]" />
-          <div className="relative mx-auto aspect-[4/5.4] w-[82%] overflow-hidden rounded-t-full border border-white/10 shadow-2xl shadow-black/60">
+        <div className="relative mx-auto h-[520px] w-full max-w-[520px] sm:h-[620px] lg:h-auto lg:max-w-none">
+          <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[58%] rounded-t-full bg-gradient-to-b from-gold to-gold-dark" />
+          <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[58%] rounded-t-full bg-[repeating-radial-gradient(circle_at_50%_100%,transparent_0_22px,rgba(5,7,12,.08)_22px_23px)]" />
+          <div className="absolute inset-y-0 left-[12%] right-[12%] overflow-hidden rounded-t-full border border-white/10 shadow-2xl shadow-black/60">
             <img
               src="/images/austin-kaplan.webp"
               alt="Austin Kaplan, Founder and Managing Attorney of Kaplan Law Firm"
@@ -84,7 +75,7 @@ export default function Hero() {
           </div>
 
           {/* Name plate */}
-          <div className="absolute bottom-6 left-0 z-10 flex items-center gap-3 rounded-2xl border border-white/10 bg-ink/85 py-3 pl-3 pr-5 backdrop-blur-md sm:left-[-4%]">
+          <div className="absolute bottom-6 left-0 z-10 flex items-center gap-3 rounded-2xl border border-white/10 bg-ink/85 py-3 pl-3 pr-5 backdrop-blur-md">
             <span className="grid h-10 w-10 place-items-center rounded-full bg-gold text-ink"><Scale size={18} aria-hidden="true" /></span>
             <span className="leading-tight">
               <span className="block font-serif text-lg">Austin Kaplan</span>
@@ -92,19 +83,6 @@ export default function Hero() {
             </span>
           </div>
 
-          {/* Team card */}
-          <a
-            href="#attorneys"
-            className="group absolute right-0 top-[8%] z-10 hidden w-44 animate-floaty rounded-2xl border border-navy-line bg-navy/95 p-3 shadow-xl shadow-black/40 backdrop-blur sm:block sm:right-[-4%]"
-          >
-            <img src="/images/team.webp" alt="The Kaplan Law Firm team" className="h-20 w-full rounded-lg object-cover" />
-            <span className="mt-3 flex items-center justify-between text-sm font-semibold">
-              Meet the team
-              <span className="grid h-7 w-7 place-items-center rounded-full bg-gold text-ink transition-transform group-hover:-rotate-45">
-                <ArrowRight size={14} aria-hidden="true" />
-              </span>
-            </span>
-          </a>
         </div>
       </div>
     </section>

@@ -72,7 +72,7 @@ export default function Navbar() {
             <Phone size={15} className="text-gold" aria-hidden="true" /> {firm.phoneDisplay}
           </a>
           <a href="#contact" className="btn-gold">
-            Speak to an Attorney
+            Speak With an Attorney
             <span className="btn-dot" aria-hidden="true"><ArrowUpRight size={18} /></span>
           </a>
         </div>
@@ -115,7 +115,7 @@ export default function Navbar() {
           </ul>
           <div className="mt-auto space-y-3">
             <a href="#contact" tabIndex={open ? 0 : -1} onClick={() => setOpen(false)} className="btn-gold w-full justify-between">
-              Speak to an Attorney
+              Speak With an Attorney
               <span className="btn-dot" aria-hidden="true"><ArrowUpRight size={18} /></span>
             </a>
             <a href={firm.phoneHref} tabIndex={open ? 0 : -1} className="btn-ghost w-full justify-center">
